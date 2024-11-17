@@ -1,0 +1,37 @@
+{
+  "config": {
+    "flow_title": "{name} {type}",
+    "step": {
+      "user": {
+        "title": "Configure Seymour Screen Excellence",
+        "description": "Select the serial port for your Seymour device. For example, {example_port}.",
+        "data": {
+          "serial_port": "Serial Port"
+        }
+      },
+      "usb": {
+        "title": "Seymour Screen Excellence Discovered",
+        "description": "A Seymour device has been discovered on {serial_port}. Would you like to configure it now?"
+      },
+      "confirm": {
+        "title": "Confirm Seymour Integration",
+        "description": "The device connected to {serial_port} has been discovered. Click 'Submit' to finalize the setup."
+      }
+    },
+    "error": {
+      "invalid_port": "Invalid serial port. Please select a valid port.",
+      "connection_failed": "Failed to connect to the device. Ensure the device is powered on and connected."
+    },
+    "abort": {
+      "already_configured": "This device is already configured.",
+      "invalid_discovery_info": "Invalid discovery information provided.",
+      "device_unresponsive": "The device did not respond. Check the connection and try again.",
+      "device_query_failed": "Failed to query the device. Please check the device and retry."
+    },
+    "title": "Seymour Screen Excellence",
+    "device": {
+      "name": "Seymour Device",
+      "details": "Model: {screen_model}, Serial: {serial_number}"
+    }
+  }
+}

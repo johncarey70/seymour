@@ -1,0 +1,126 @@
+motor_selector: &motor_selector
+  select:
+    options:
+      - value: "A"
+        label: "All"
+      - value: "B"
+        label: "Bottom"
+      - value: "H"
+        label: "Horizontal (Left and Right)"
+      - value: "L"
+        label: "Left"
+      - value: "R"
+        label: "Right"
+      - value: "T"
+        label: "Top"
+      - value: "V"
+        label: "Vertical (Top and Bottom)"
+
+move_motors:
+  description: "Move the Masking Motor(s) In or Out."
+  fields:
+    direction:
+      description: "The direction to move the Motor(s) (in or out)."
+      example: "in"
+      selector:
+        select:
+          options:
+            - "in"
+            - "out"
+      required: true
+      default: "in"
+    motor_id:
+      description: |
+        The Motor(s) to move:
+          - A: All
+          - B: Bottom
+          - H: Horizontal (Left and Right)
+          - L: Left
+          - R: Right
+          - T: Top
+          - V: Vertical (Top and Bottom)
+      example: "A"
+      selector: *motor_selector
+      required: true
+      default: "A"
+    movement_code:
+      description: "Optional movement code: 'J' for Jog, 'P' for 1% Move."
+      example: "J"
+      selector:
+        select:
+          options:
+            - value: "J"
+              label: "Jog the Motor"
+            - value: "P"
+              label: "Move 1 Percent"
+
+home_motors:
+  description: "Home the specified Masking Motor(s)."
+  fields:
+    motor_id:
+      description: |
+        The Motor(s) to home:
+          - A: All
+          - B: Bottom
+          - H: Horizontal (Left and Right)
+          - L: Left
+          - R: Right
+          - T: Top
+          - V: Vertical (Top and Bottom)
+      example: "A"
+      selector: *motor_selector
+      required: true
+      default: "A"
+
+halt_motors:
+  description: "Halt the specified Masking Motor(s)."
+  fields:
+    motor_id:
+      description: |
+        The Motor(s) to home:
+          - A: All
+          - B: Bottom
+          - H: Horizontal (Left and Right)
+          - L: Left
+          - R: Right
+          - T: Top
+          - V: Vertical (Top and Bottom)
+      example: "A"
+      selector: *motor_selector
+      required: true
+      default: "A"
+
+calibrate_motors:
+  description: "Calibrate the specified Masking Motor(s)."
+  fields:
+    motor_id:
+      description: |
+        The Motor(s) to home:
+          - A: All
+          - B: Bottom
+          - H: Horizontal (Left and Right)
+          - L: Left
+          - R: Right
+          - T: Top
+          - V: Vertical (Top and Bottom)
+      example: "A"
+      selector: *motor_selector
+      required: true
+      default: "A"
+
+update_ratio:
+  description: "Update one the ratio memory allocations. This is one of the 10 factory defaults or one of the 10 custom ratios: 990-999."
+  fields:
+    ratio_id:
+      description: "Enter the 3 digit Ratio ID."
+      example: 178
+      required: true
+      selector:
+        number:
+          min: 133
+          max: 999
+          step: 1
+          mode: box
+      default: 178
+
+

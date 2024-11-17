@@ -1,0 +1,16 @@
+{
+    "domain": "seymour",
+    "name": "Seymour Screen Excellence",
+    "codeowners": ["@johncarey70"],
+    "config_flow": true,
+    "dependencies": [],
+    "version": "1.0.0",
+    "documentation": "https://github.com/johncarey70/seymour",
+    "homekit": {},
+    "integration_type": "device",
+    "iot_class": "local_push",
+    "requirements": ["pyserial-asyncio-fast>=0.14"],
+    "usb": [
+        { "vid": "0403", "pid": "6001" }
+    ]
+}
